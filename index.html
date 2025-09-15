@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/script.js"></script>
+    <title>Titan-Imbiss</title>
+</head>
+<body onload="init()">
+    <div class="widescreen header">
+        <header class="width-1440px padding-left-right">
+            <h1 class="header-title">Titan Imbiss</h1>
+            <nav>
+                <ul class="navbar">
+                    <li class="nav-item" onclick="setMenu(0)">ALLE</li>
+                    <li class="nav-item" onclick="setMenu(1)">REIS</li>
+                    <li class="nav-item" onclick="setMenu(2)">NUDEL</li>
+                    <li class="nav-item" onclick="setMenu(3)">NEBEN</li>
+                </ul>
+            </nav>
+        </header>
+        </div>
+    <div class="widescreen main">
+        <main class="width-1440px padding-left-right">
+            <section class="menu">
+                <h2 id="menu-card"></h2>
+                <div class="food-loader" id="food-loader">
+
+                </div>
+            </section>
+            <section class="cart" id="cart">
+                <h2>GERICHTE</h2>
+                <div class="cart-loader" id="cart-loader">
+                    <!-- dishes -->
+                     <p>Deine Tüte ist leer!<br>Drück auf Plus!
+                     </p>
+                </div>
+                <div class="total" id="total">
+                    <!-- Gesamt: XX.XX€  -->
+                    <p>Gesamt: XX.XX€</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

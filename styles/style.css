@@ -1,0 +1,126 @@
+:root{
+    --primary-color: black;
+    --large-font-size: 48px;
+    --medium-font-size: 28px;
+    --minimal-font-size: 16px;
+    --bg-default: rgb(254 242 216);
+    --bg-focus: rgb(148, 218, 243);
+}
+
+h2{
+  font-size: var(--medium-font-size);
+}
+
+body{
+  font-family: 'Comic Sans MS', 'Manga Temple', sans-serif;
+  /* background-image: url(/assets/img/bg-titan-imbiss.png); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(250 245 238);
+  height: 100vh;
+  object-fit: cover;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 16px;
+}
+
+.header{
+  height: 15%;
+}
+
+.main{
+  height: 70%;
+}
+
+.header-title{
+  text-align: center;
+  font-size: var(--large-font-size);
+  background-color: rgb(254 242 216);
+  padding: 16px;
+}
+
+.navbar{
+  display: flex;
+  gap: 32px;
+  font-size: var(--medium-font-size);
+
+}
+
+.nav-item{
+  background-color: rgb(254 242 216);
+}
+
+main{
+  display: flex;
+  gap: 16px;
+  height: 100%;
+}
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(64, 0, 255);
+  border: 1px solid black;
+  flex: 0 0 calc(75% - 20px); /* 75% Breite */
+
+  h2{
+    padding: 24px 24px 0 24px;
+  }
+}
+
+.cart{
+  text-align: center;
+  border: 1px solid black;
+  flex: 0 0 25%; /* 25% Breite */
+  padding: 24px;
+  background-color: rgb(64, 0, 255);
+}
+
+.food-loader{
+  border: 1px solid black;
+  height: 100%;
+  background-color: aqua;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-track-color: rgba(240, 248, 255, 0);
+}
+
+.food-card{
+  display: flex;
+  margin: 24px;
+  width: calc(100% - 48px);
+  height: 300px;
+  border: 1px solid black;
+}
+
+.cart-card{
+  display: flex;
+}
+
+.dishes{
+  padding: 0;
+  margin: 0;
+}
+
+
+.food-card-image{
+  height: 150px;
+  width: 150px;
+}
+
+.cart-card-image{
+  height: 64px;
+  width: 64px;
+}
