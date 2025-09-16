@@ -71,6 +71,16 @@ function addFood(dishIndex){
   renderCart();
 }
 
+function removeFood(dishIndex){
+  cart[dishIndex]--;
+  renderCart();
+}
+
+function setZero(dishIndex){
+  cart[dishIndex] = 0;
+  renderCart();
+}
+
 function renderCart(){
   const cartLoaderRef = document.getElementById("cart-loader");
   cartLoaderRef.innerHTML = "";

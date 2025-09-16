@@ -2,13 +2,16 @@ function foodCard(dishIndex){
   return `
     <div class="food-card" id="food-card">
         <section>
-            <img class="food-card-image" src="./assets/img/book-cover.png" alt="">
+            <img class="food-card-image" src="${dishes[dishIndex].image}" alt="${dishes[dishIndex].description}">
         </section>
         <section>
-            <div class="details">
+            <div class="food-card-details">
             <h2>${dishes[dishIndex].name}</h2>
             <h3>${dishes[dishIndex].description}</h3>
-            <button onclick="addFood(${dishIndex})">ADD</button>
+        </section>
+        <section class="food-card-last">
+            <img class="cart-card-icon food-cart-icon" src="./assets/icon/add.svg" alt="abziehen"
+                onclick="addFood(${dishIndex})">
         </section>
     </div>
     `;
@@ -17,14 +20,21 @@ function foodCard(dishIndex){
 function cartCard(cartIndex){
     return `
     <div class="cart-card" id="cart-card">
-        <section>
-            <img class="cart-card-image" src="./assets/img/book-cover.png" alt="">
+        <section class="cart-card-thumbnail">
+            <img class="cart-card-image" src="${dishes[cartIndex].image}" alt="${dishes[cartIndex].description}">
         </section>
-        <section>
-            <div class="details">
+        <section class="cart-card-details">
             <h3>${dishes[cartIndex].name}</h3>
-            <h4>${cart[cartIndex]}</h4>
-            <div>${cart[cartIndex] * dishes[cartIndex].price}</div>
+            <div class="cart-card-details-card">
+                <img class="cart-card-icon" src="./assets/icon/remove.svg" alt="abziehen"
+                    onclick="removeFood(${cartIndex})">
+                <div class="">${cart[cartIndex]}x</div>
+                <img class="cart-card-icon" src="./assets/icon/add.svg" alt="hinzufügen"
+                    onclick="addFood(${cartIndex})">
+                <div class="">${cart[cartIndex] * dishes[cartIndex].price}€</div>
+                <img src="./assets/icon/delete.svg" alt="entfernen"
+                    onclick="setZero(${cartIndex})">
+            </div>
         </section>
     </div>
     `;

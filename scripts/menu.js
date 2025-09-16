@@ -5,21 +5,21 @@ const dishes = [
       description: "Würziges Katsu-Curry mit der Kraft der Titanen",
       price: 14.00,
       category: "rice",
-      image: "./assets/imgs/titan-curry.jpg"
+      image: "./assets/img/titan-curry.jpeg"
   },
   {
       name: "Narutos Hokage Schüssel",
       description: "Ramen-glasiertes Hähnchen auf Reis",
       price: 13.50,
       category: "rice",
-      image: "./assets/imgs/hokage-bowl.jpg"
+      image: "./assets/img/hokage-bowl.jpeg"
   },
   {
       name: "Ruff's Fleisch Paradies Donburi",
       description: "Saftiges Fleisch-Fest auf Reis",
       price: 15.00,
       category: "rice",
-      image: "./assets/imgs/meat-paradise.jpg"
+      image: "./assets/img/meat-paradise.jpeg"
   },
   
   // NOODLES - NUDELGERICHTE
@@ -28,21 +28,21 @@ const dishes = [
       description: "Kraftvolle Tonkotsu-Brühe für den Kampf gegen die Titanen",
       price: 16.00,
       category: "noodles",
-      image: "./assets/imgs/expedition-ramen.jpg"
+      image: "./assets/img/expedition-ramen.jpeg"
   },
   {
       name: "Sukunas Fuga Udon",
       description: "Dämonisch scharfe Udon in feuriger Brühe",
       price: 14.50,
       category: "noodles",
-      image: "./assets/imgs/domain-udon.jpg"
+      image: "./assets/img/domain-udon.jpeg"
   },
   {
       name: "Sanji's Grand Line Yakisoba",
       description: "Meisterhaft gebratene Nudeln mit Meeresfrüchten",
       price: 13.00,
       category: "noodles",
-      image: "./assets/imgs/grandline-yakisoba.jpg"
+      image: "./assets/img/grandline-yakisoba.jpeg"
   },
   
   // SIDES - NEBENGERICHTE
@@ -51,21 +51,21 @@ const dishes = [
       description: "6 perfekte Teigtaschen",
       price: 8.50,
       category: "sides",
-      image: "./assets/imgs/six-eyes-gyoza.jpg"
+      image: "./assets/img/six-eyes-gyoza.jpeg"
   },
   {
       name: "Ichirakus Geheim Tempura",
       description: "Knusprige Garnelen-Tempura nach Teuchi's Geheimrezept",
       price: 9.50,
       category: "sides",
-      image: "./assets/imgs/ichiraku-tempura.jpg"
+      image: "./assets/img/ichiraku-tempura.jpeg"
   },
   {
       name: "Mikasas Training Edamame",
       description: "Energie für intensives Ausrüstung Training",
       price: 6.00,
       category: "sides",
-      image: "./assets/imgs/training-edamame.jpg"
+      image: "./assets/img/training-edamame.jpeg"
   }
 ];
 

@@ -3,7 +3,7 @@
     --large-font-size: 48px;
     --medium-font-size: 28px;
     --minimal-font-size: 16px;
-    --bg-default: rgb(254 242 216);
+    --bg-default: rgb(254 248 241);
     --bg-focus: rgb(148, 218, 243);
 }
 
@@ -17,7 +17,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(250 245 238);
+  background-color: var(--bg-default);
   height: 100vh;
   object-fit: cover;
   color: var(--primary-color);
@@ -35,18 +35,22 @@ header{
   gap: 16px;
 }
 
+main{
+  display: flex;
+  gap: 16px;
+  height: 100%;
+}
 .header{
   height: 15%;
 }
 
 .main{
-  height: 70%;
+  text-align: center;
 }
 
 .header-title{
   text-align: center;
   font-size: var(--large-font-size);
-  background-color: rgb(254 242 216);
   padding: 16px;
 }
 
@@ -58,55 +62,57 @@ header{
 }
 
 .nav-item{
-  background-color: rgb(254 242 216);
-}
-
-main{
-  display: flex;
-  gap: 16px;
-  height: 100%;
+  text-align: center;
 }
 
 .menu{
   display: flex;
   flex-direction: column;
-  background-color: rgb(64, 0, 255);
-  border: 1px solid black;
+  /* background-color: rgb(64, 0, 255); */
+  /* border: 1px solid black; */
   flex: 0 0 calc(75% - 20px); /* 75% Breite */
-
-  h2{
-    padding: 24px 24px 0 24px;
-  }
 }
 
 .cart{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   border: 1px solid black;
   flex: 0 0 25%; /* 25% Breite */
-  padding: 24px;
-  background-color: rgb(64, 0, 255);
+  padding: 16px;
+  /* background-color: rgb(64, 0, 255); */
 }
 
 .food-loader{
+  /* flex:1; */
   border: 1px solid black;
   height: 100%;
-  background-color: aqua;
-  overflow-y: hidden;
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-track-color: rgba(240, 248, 255, 0);
+  /* background-color: aqua; */
 }
 
 .food-card{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
   margin: 24px;
-  width: calc(100% - 48px);
+  /* width: calc(100% - 48px); */
   height: 300px;
   border: 1px solid black;
+
+  h3{
+    font-weight: 300;
+  }
+}
+
+.cart-loader{
+  /* flex: 1; */
+  text-align: center;
 }
 
 .cart-card{
   display: flex;
+  padding: 16px 0;
 }
 
 .dishes{
@@ -117,10 +123,64 @@ main{
 
 .food-card-image{
   height: 150px;
-  width: 150px;
+  width: 220px;
+  object-fit: cover;
 }
 
 .cart-card-image{
-  height: 64px;
-  width: 64px;
+  height: 75px;
+  width: 110px;
+  object-fit: cover;
+}
+
+.sticky-cart{
+  position: sticky;
+  top: 0;
+}
+
+.cart-card-details{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-card-details-card{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.menu-card{
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-card-thumbnail{
+  display: flex;
+  align-items: center;
+}
+
+.cart-card-icon{
+  height: 24px;
+  width: 24px;
+}
+
+.food-card-last{
+  padding: 24px;
+  /* width: 100%;
+  height: 100%; */
+  display: flex;
+  justify-content: end;
+
+  button{
+    width: 48px;
+    height: 32px;
+  }
+}
+
+.food-cart-icon{
+  border: 1px solid black;
 }
