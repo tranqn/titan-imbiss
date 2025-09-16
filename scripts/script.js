@@ -89,10 +89,10 @@ function renderCart(){
       cartLoaderRef.innerHTML += cartCard(cartIndex);
     }
   }
-  renderTotal();
+  renderTotalCart();
 }
 
-function renderTotal(){
+function renderTotalCart(){
   const totalRef = document.getElementById("total");
   let total = 0;
   for(let cartIndex = 0; cartIndex < cart.length; cartIndex++){

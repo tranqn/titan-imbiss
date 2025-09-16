@@ -39,7 +39,9 @@ main{
   display: flex;
   gap: 16px;
   height: 100%;
+  width: 100%;
 }
+
 .header{
   height: 15%;
 }
@@ -70,7 +72,8 @@ main{
   flex-direction: column;
   /* background-color: rgb(64, 0, 255); */
   /* border: 1px solid black; */
-  flex: 0 0 calc(75% - 20px); /* 75% Breite */
+  /* flex: 0 0 calc(75% - 20px); 75% Breite */
+  width: 100%;
 }
 
 .cart{
@@ -113,6 +116,7 @@ main{
 .cart-card{
   display: flex;
   padding: 16px 0;
+  width: 350px;
 }
 
 .dishes{
@@ -183,4 +187,86 @@ main{
 
 .food-cart-icon{
   border: 1px solid black;
+}
+
+.total{
+  /* border-top: 1px solid black;*/
+  padding: 8px; 
+}
+
+.dialog-total{
+  /* /* border-top: 1px solid black;* */
+  padding: 8px; 
+}
+
+.sticky-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(253, 236, 217);
+  height: 50px;
+  border: 1px solid black;
+  position: sticky;
+  bottom: 0;
+  background: rgb(254 248 241);
+  cursor: pointer;
+  /* display: none; */
+}
+
+/* .test{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
+dialog {
+  position: fixed;   /* Vollbild unabhängig vom Body-Layout */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+
+  .sticky-menu-dialog{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(253, 236, 217);
+    cursor: pointer;
+  }
+}
+
+.dialog-loader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog-total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.d_none-dialog{
+  display: none;
+}
+
+@media (max-width: 1070px){
+  .cart{
+    display: none;
+  }
+
+  .menu{
+    width: 100%;
+  }
+
+  .d_none-dialog{
+    display: flex;
+  }
 }

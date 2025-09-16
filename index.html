@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/template.js"></script>
+    <script src="./scripts/dialog.js"></script>
     <script src="./scripts/script.js"></script>
     <title>Titan-Imbiss</title>
 </head>
 <body onload="init()">
+    <dialog id="gerichte-id" class="test" >
+        <div class="sticky-menu-dialog" onclick="closeScreen()">GERICHTE</div>
+        <div class="dialog-loader" id="dialog-loader"></div>
+        <hr>
+        <div class="dialog-total" id="dialog-total">
+            <!-- Gesamt: XX.XX€  -->
+        </div>
+    </dialog>
     <div class="widescreen header">
         <header class="width-1440px padding-left-right">
             <h1 class="header-title">Titan Imbiss</h1>
@@ -31,18 +40,19 @@
                 <div class="food-loader" id="food-loader">
                     <!-- food-cards -->
                 </div>
+                <div class="sticky-menu d_none-dialog" onclick="fullScreen()">DEINE GERICHTE</div>
             </section>
             <section class="cart" id="cart">
                 <div class="sticky-cart">
-                    <h2>GERICHTE</h2>
+                    <h2>DEINE GERICHTE</h2>
                     <div class="cart-loader" id="cart-loader">
                         <!-- dishes -->
                         <p>Deine Tüte ist leer!<br>Drück auf Plus!
                         </p>
                     </div>
+                    <hr>
                     <div class="total" id="total">
                         <!-- Gesamt: XX.XX€  -->
-                        <p>Gesamt: XX.XX€</p>
                     </div>
                 </div>
             </section>
