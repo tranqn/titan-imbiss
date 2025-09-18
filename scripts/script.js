@@ -66,39 +66,55 @@ function Menu(categoriesIndex){
   }
 }
 
-function addFood(dishIndex){
-  cart[dishIndex]++;
-  renderCart();
-}
-
-function removeFood(dishIndex){
-  cart[dishIndex]--;
-  renderCart();
-}
-
-function setZero(dishIndex){
-  cart[dishIndex] = 0;
-  renderCart();
-}
-
 function renderCart(){
   const cartLoaderRef = document.getElementById("cart-loader");
   cartLoaderRef.innerHTML = "";
+
   for(let cartIndex = 0; cartIndex < cart.length; cartIndex++){
-    if(cart[cartIndex]!= 0){
+    if(cart[cartIndex] && cart[cartIndex].amount > 0){
       cartLoaderRef.innerHTML += cartCard(cartIndex);
     }
   }
+
+  attachCartEventListeners();
   renderTotalCart();
+}
+
+function attachCartEventListeners(){
+  // alle "entfernen"-Buttons
+  document.querySelectorAll(".btn-remove").forEach(btn => {
+    btn.addEventListener("click", () => {
+      removeBillItem(btn.dataset.name);
+    });
+  });
+
+  // alle "hinzufügen"-Buttons
+  document.querySelectorAll(".btn-add").forEach(btn => {
+    btn.addEventListener("click", () => {
+      addBillItemCart(btn.dataset.name);
+    });
+  });
+
+  // alle "löschen"-Buttons
+  document.querySelectorAll(".btn-delete").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setAmountZero(btn.dataset.name);
+    });
+  });
 }
 
 function renderTotalCart(){
   const totalRef = document.getElementById("total");
   let total = 0;
   for(let cartIndex = 0; cartIndex < cart.length; cartIndex++){
-    total += cart[cartIndex] * dishes[cartIndex].price.toFixed(2);
+    total += cart[cartIndex].amount * cart[cartIndex].price;
   }
-  totalRef.innerHTML = totalCard(total);
+  if(total == 0){
+    totalRef.innerHTML = totalCard(0)
+  }
+  else{
+    totalRef.innerHTML = totalCard(total + 5);
+  }
 }
 
 function closeScreen(){
@@ -109,5 +125,45 @@ cartRef.classList.add("d_none");
 function fullScreen(){
   const cartRef = document.getElementById('small-cart');
   cartRef.classList.remove("d_none");
+  renderDialog();
+}
+
+function addBillItem(dishIndex){
+  let billItem = Object.create(billItemProto);
+  billItem.name = dishes[dishIndex].name;
+  billItem.price = dishes[dishIndex].price;
+  billItem.image = dishes[dishIndex].image;
+  billItem.description = dishes[dishIndex].description;
+
+  const billItemRef = cart.find(element => element.name === billItem.name)
+
+  if (!billItemRef) {
+    billItem.amount = 1;
+    cart.push(billItem);
+  }
+  else {
+    billItemRef.amount++;
+  }
+  renderCart();
+}
+
+function removeBillItem(billItemName){
+  const billItemRef = cart.find(element => element.name === billItemName)
+  billItemRef.amount--;
+  renderCart();
+  renderDialog();
+}
+
+function addBillItemCart(billItemName){
+  const billItemRef = cart.find(element => element.name === billItemName)
+  billItemRef.amount++;
+  renderCart();
+  renderDialog();
+}
+
+function setAmountZero(billItemName){
+  const billItemRef = cart.find(element => element.name === billItemName)
+  billItemRef.amount = 0;
+  renderCart();
   renderDialog();
 }

@@ -76,10 +76,12 @@ const categories = [
   { id: "sides", name: "NEBENGERICHTE" }
 ];
 
-let cart = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+let cart = [];
 
-// let billitem{
-//     name
-//     amount
-//     price 
-// }
+const billItemProto = {
+    "name": "proto",
+    "amount": 0,
+    "price": 0,
+    "image": "",
+    "description": "",
+}

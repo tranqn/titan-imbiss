@@ -8,10 +8,11 @@ function foodCard(dishIndex){
             <div class="food-card-details">
             <h2>${dishes[dishIndex].name}</h2>
             <h3>${dishes[dishIndex].description}</h3>
+            <h3>${dishes[dishIndex].price.toFixed(2)}€</h3>
         </section>
         <section class="food-card-last">
             <img class="cart-card-icon food-cart-icon" src="./assets/icon/add.svg" alt="abziehen"
-                onclick="addFood(${dishIndex})">
+                onclick="addBillItem(${dishIndex})">
         </section>
     </div>
     `;
@@ -19,52 +20,46 @@ function foodCard(dishIndex){
 
 function cartCard(cartIndex){
     return `
-    <div class="cart-card" id="cart-card">
+    <div class="cart-card" id="cart-card-${cartIndex}">
         <section class="cart-card-thumbnail">
-            <img class="cart-card-image" src="${dishes[cartIndex].image}" alt="${dishes[cartIndex].description}">
+            <img class="cart-card-image" src="${cart[cartIndex].image}" alt="${cart[cartIndex].description}">
         </section>
         <section class="cart-card-details">
-            <h3>${dishes[cartIndex].name}</h3>
+            <h3>${cart[cartIndex].name}</h3>
             <div class="cart-card-details-card">
-                <img class="cart-card-icon" src="./assets/icon/remove.svg" alt="abziehen"
-                    onclick="removeFood(${cartIndex})">
-                <div class="">${cart[cartIndex]}x</div>
-                <img class="cart-card-icon" src="./assets/icon/add.svg" alt="hinzufügen"
-                    onclick="addFood(${cartIndex})">
-                <div class="">${(cart[cartIndex] * dishes[cartIndex].price).toFixed(2)}€</div>
-                <img src="./assets/icon/delete.svg" alt="entfernen"
-                    onclick="setZero(${cartIndex})">
+                <img class="cart-card-icon btn-remove" data-name="${cart[cartIndex].name}" src="./assets/icon/remove.svg" alt="abziehen">
+                <div>${cart[cartIndex].amount}x</div>
+                <img class="cart-card-icon btn-add" data-name="${cart[cartIndex].name}" src="./assets/icon/add.svg" alt="hinzufügen">
+                <div>${(cart[cartIndex].amount * cart[cartIndex].price).toFixed(2)}€</div>
+                <img class="cart-card-icon btn-delete" data-name="${cart[cartIndex].name}" src="./assets/icon/delete.svg" alt="entfernen">
             </div>
         </section>
     </div>
     `;
 }
 
-function cartCardDialog(cartIndex){
-    return `
-    <div class="cart-card" id="cart-card">
-        <section class="cart-card-thumbnail">
-            <img class="cart-card-image" src="${dishes[cartIndex].image}" alt="${dishes[cartIndex].description}">
-        </section>
-        <section class="cart-card-details">
-            <h3>${dishes[cartIndex].name}</h3>
-            <div class="cart-card-details-card">
-                <img class="cart-card-icon" src="./assets/icon/remove.svg" alt="abziehen"
-                    onclick="removeFoodDialog(${cartIndex})">
-                <div class="">${cart[cartIndex]}x</div>
-                <img class="cart-card-icon" src="./assets/icon/add.svg" alt="hinzufügen"
-                    onclick="addFoodDialog(${cartIndex})">
-                <div class="">${(cart[cartIndex] * dishes[cartIndex].price).toFixed(2)}€</div>
-                <img src="./assets/icon/delete.svg" alt="entfernen"
-                    onclick="setZeroDialog(${cartIndex})">
-            </div>
-        </section>
-    </div>
-    `;
-}
+// function cartCardDialog(cartIndex){
+//     return `
+//     <div class="cart-card" id="cart-card-${cartIndex}">
+//         <section class="cart-card-thumbnail">
+//             <img class="cart-card-image" src="${cart[cartIndex].image}" alt="${cart[cartIndex].description}">
+//         </section>
+//         <section class="cart-card-details">
+//             <h3>${cart[cartIndex].name}</h3>
+//             <div class="cart-card-details-card">
+//                 <img class="cart-card-icon btn-remove" data-name="${cart[cartIndex].name}" src="./assets/icon/remove.svg" alt="abziehen">
+//                 <div>${cart[cartIndex].amount}x</div>
+//                 <img class="cart-card-icon btn-add" data-name="${cart[cartIndex].name}" src="./assets/icon/add.svg" alt="hinzufügen">
+//                 <div>${(cart[cartIndex].amount * cart[cartIndex].price).toFixed(2)}€</div>
+//                 <img class="cart-card-icon btn-delete" data-name="${cart[cartIndex].name}" src="./assets/icon/delete.svg" alt="entfernen">
+//             </div>
+//         </section>
+//     </div>
+//     `;
+// }
 
 function totalCard(total){
     return `
-    <div class="total">Gesamt: ${total.toFixed(2)}€</div>
+    <div>Gesamt: ${total.toFixed(2)}€</div>
     `
 }
