@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="./assets/favicon/apple-touch-icon.png" />
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/template.js"></script>
     <script src="./scripts/dialog.js"></script>
@@ -12,39 +13,45 @@
     <title>Titan-Imbiss</title>
 </head>
 <body onload="init()">
-    <dialog id="gerichte-id" class="test" >
-        <div class="sticky-menu-dialog" onclick="closeScreen()">GERICHTE</div>
+    <div id="small-cart" class="small-cart d_none" >
+        <div class="sticky-menu-dialog" onclick="closeScreen()">DEINE GERICHTE</div>
         <div class="dialog-loader" id="dialog-loader"></div>
         <hr>
         <div class="dialog-total" id="dialog-total">
             <!-- Gesamt: XX.XX€  -->
         </div>
-    </dialog>
+    </div>
     <div class="widescreen header">
         <header class="width-1440px padding-left-right">
-            <h1 class="header-title">Titan Imbiss</h1>
-            <nav>
-                <ul class="navbar">
-                    <li class="nav-item" onclick="setMenu(0)">ALLE</li>
-                    <li class="nav-item" onclick="setMenu(1)">REIS</li>
-                    <li class="nav-item" onclick="setMenu(2)">NUDEL</li>
-                    <li class="nav-item" onclick="setMenu(3)">NEBEN</li>
-                </ul>
-            </nav>
+            <div class="banner"><img class="banner-img" src="./assets/logo/Bestell App- Logo.svg" alt="liefer banner"></div>
         </header>
         </div>
     <div class="widescreen main">
         <main class="width-1440px padding-left-right">
             <section class="menu">
+                <div class="imbiss-banner_div">
+                <img class="imbiss-banner" src="./assets/img/titan-imbiss-banner2.png" alt="titan imbiss banner"></img>
+                <img class="imbiss-logo" src="./assets/img/Nudelbox.png" alt="imbiss logo">
+                </div>
+                <h1 class="header-title">Titan Imbiss</h1>
+                <div class="review">Bewertung (4,2 von 5 Sternen)</div>
+                <nav>
+                    <ul class="navbar">
+                        <li class="nav-item" onclick="setMenu(0)">ALLE</li>
+                        <li class="nav-item" onclick="setMenu(1)">REIS</li>
+                        <li class="nav-item" onclick="setMenu(2)">NUDEL</li>
+                        <li class="nav-item" onclick="setMenu(3)">NEBEN</li>
+                    </ul>
+                </nav>
                 <h2 class="menu-card" id="menu-card"></h2>
                 <div class="food-loader" id="food-loader">
                     <!-- food-cards -->
                 </div>
-                <div class="sticky-menu d_none-dialog" onclick="fullScreen()">DEINE GERICHTE</div>
+                <div class="sticky-menu show-small-cart" onclick="fullScreen()" href="#small-cart">DEINE GERICHTE</div>
             </section>
             <section class="cart" id="cart">
                 <div class="sticky-cart">
-                    <h2>DEINE GERICHTE</h2>
+                    <h2 class="sticky-cart-title">DEINE GERICHTE</h2>
                     <div class="cart-loader" id="cart-loader">
                         <!-- dishes -->
                         <p>Deine Tüte ist leer!<br>Drück auf Plus!

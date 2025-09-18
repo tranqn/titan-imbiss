@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Box in einer Box, wird nicht größer durch padding oder Border */
+    scroll-behavior: smooth;
 }
 
 a{

@@ -13,16 +13,6 @@ function setZeroDialog(dishIndex){
   renderDialog();
 }
 
-function fullScreen(){
-  const dialogRef =document.getElementById("gerichte-id");
-  dialogRef.showModal();
-  renderDialog();
-}
-
-function closeScreen(){
-  const dialogRef =document.getElementById("gerichte-id");
-  dialogRef.close();
-}
 
 function renderDialog(){
   const dialogLoaderRef = document.getElementById("dialog-loader");

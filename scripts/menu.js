@@ -77,3 +77,9 @@ const categories = [
 ];
 
 let cart = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+// let billitem{
+//     name
+//     amount
+//     price 
+// }

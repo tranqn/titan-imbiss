@@ -100,3 +100,14 @@ function renderTotalCart(){
   }
   totalRef.innerHTML = totalCard(total);
 }
+
+function closeScreen(){
+const cartRef = document.getElementById('small-cart');
+cartRef.classList.add("d_none");
+}
+
+function fullScreen(){
+  const cartRef = document.getElementById('small-cart');
+  cartRef.classList.remove("d_none");
+  renderDialog();
+}
