@@ -38,26 +38,6 @@ function cartCard(cartIndex){
     `;
 }
 
-// function cartCardDialog(cartIndex){
-//     return `
-//     <div class="cart-card" id="cart-card-${cartIndex}">
-//         <section class="cart-card-thumbnail">
-//             <img class="cart-card-image" src="${cart[cartIndex].image}" alt="${cart[cartIndex].description}">
-//         </section>
-//         <section class="cart-card-details">
-//             <h3>${cart[cartIndex].name}</h3>
-//             <div class="cart-card-details-card">
-//                 <img class="cart-card-icon btn-remove" data-name="${cart[cartIndex].name}" src="./assets/icon/remove.svg" alt="abziehen">
-//                 <div>${cart[cartIndex].amount}x</div>
-//                 <img class="cart-card-icon btn-add" data-name="${cart[cartIndex].name}" src="./assets/icon/add.svg" alt="hinzufügen">
-//                 <div>${(cart[cartIndex].amount * cart[cartIndex].price).toFixed(2)}€</div>
-//                 <img class="cart-card-icon btn-delete" data-name="${cart[cartIndex].name}" src="./assets/icon/delete.svg" alt="entfernen">
-//             </div>
-//         </section>
-//     </div>
-//     `;
-// }
-
 function totalCard(total){
     return `
     <div>Gesamt: ${total.toFixed(2)}€</div>

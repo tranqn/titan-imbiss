@@ -80,26 +80,35 @@ function renderCart(){
   renderTotalCart();
 }
 
-function attachCartEventListeners(){
+function attachCartEventListeners() {
   // alle "entfernen"-Buttons
   document.querySelectorAll(".btn-remove").forEach(btn => {
-    btn.addEventListener("click", () => {
-      removeBillItem(btn.dataset.name);
-    });
+    if (!btn.dataset.listenerAdded) {
+      btn.addEventListener("click", () => {
+        removeBillItem(btn.dataset.name);
+      });
+      btn.dataset.listenerAdded = "true"; // Marker setzen
+    }
   });
 
   // alle "hinzufügen"-Buttons
   document.querySelectorAll(".btn-add").forEach(btn => {
-    btn.addEventListener("click", () => {
-      addBillItemCart(btn.dataset.name);
-    });
+    if (!btn.dataset.listenerAdded) {
+      btn.addEventListener("click", () => {
+        addBillItemCart(btn.dataset.name);
+      });
+      btn.dataset.listenerAdded = "true";
+    }
   });
 
   // alle "löschen"-Buttons
   document.querySelectorAll(".btn-delete").forEach(btn => {
-    btn.addEventListener("click", () => {
-      setAmountZero(btn.dataset.name);
-    });
+    if (!btn.dataset.listenerAdded) {
+      btn.addEventListener("click", () => {
+        setAmountZero(btn.dataset.name);
+      });
+      btn.dataset.listenerAdded = "true";
+    }
   });
 }
 
@@ -119,13 +128,18 @@ function renderTotalCart(){
 
 function closeScreen(){
 const cartRef = document.getElementById('small-cart');
+const bodyRef = document.body;
 cartRef.classList.add("d_none");
+bodyRef.classList.remove("scroll-y-hidden");
 }
 
 function fullScreen(){
   const cartRef = document.getElementById('small-cart');
+  const bodyRef = document.body;
   cartRef.classList.remove("d_none");
+  bodyRef.classList.add("scroll-y-hidden");
   renderDialog();
+  window.scrollTo(0, 0);
 }
 
 function addBillItem(dishIndex){
@@ -166,4 +180,17 @@ function setAmountZero(billItemName){
   billItemRef.amount = 0;
   renderCart();
   renderDialog();
+}
+
+function showOrderDialog(){
+  const dialogRef = document.getElementById('order-dialog');
+  cart = [];
+  renderCart();
+  renderDialog();
+  dialogRef.showModal();
+}
+
+function closeOrderDialog(){
+  const dialogRef = document.getElementById('order-dialog');
+  dialogRef.close();
 }
